@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>RGB Console</title>
+
+<link href="../static/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+<style>
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div id='header'> 	 	 
+		 <h2>	<center> RGB LED Panel </center> </h2>			
+	 </div>
+		
+		<div class="container">
+		  <div class="row" id="login-container">
+			<div class="span7 center">
+			   
+			   
+		<label class="checkbox-inline">
+		<input id = "red-button" name = "Red" type="checkbox" data-onstyle="danger"  data-toggle="toggle"> Red </label>
+		  
+		<label class="checkbox-inline">
+		<input id = "green-button" name = "Green"  type="checkbox" data-onstyle="success" data-toggle="toggle"> Green </label>
+		  
+		<label class="checkbox-inline">
+		<input id = "blue-button" name = "Blue" type="checkbox" data-onstyle= "primary" data-toggle="toggle"> Blue </label>
+		
+		</div>
+		  </div>
+		</div>
+
+		<div>
+			<center>  &copy;Copyright 2017 SwishPi.	 </center>
+		</div> 
+		
+    <script src="../static/js/jquery.js"></script>
+	<script src="../static/js/bootstrap-toggle.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+	
+<script>
+
+   $('#red-button').change(function() {
+		console.log('Toggle: ' + $(this).prop('checked'));
+		console.log('Toggle: ' + $(this).prop('id'));
+		console.log('Toggle: ' + $(this).prop('name'));
+
+		var buttonName = $(this).prop('name');
+		var buttonId = $(this).prop('id');
+        var buttonStatus = $(this).prop('checked');
+		
+		var redButton = new Object();
+		redButton.id =  buttonId;
+		redButton.name = buttonName;
+		redButton.status =  buttonStatus;
+		
+		var buttondata = JSON.stringify(redButton)
+		
+		console.log(buttondata);
+	
+			$.ajax({
+			  type: "POST",
+			  url: "/RGB",
+			  data: buttondata,
+			  success: function(){},
+			  dataType: "json",
+			  contentType : "application/json"
+			});
+
+    })
+	
+	$('#green-button').change(function() {
+	
+		var buttonName = $(this).prop('name');
+		var buttonId = $(this).prop('id');
+        var buttonStatus = $(this).prop('checked');
+		
+		var greenButton = new Object();
+		greenButton.id =  buttonId;
+		greenButton.name = buttonName;
+		greenButton.status =  buttonStatus;
+
+		var buttondata = JSON.stringify(greenButton)
+		console.log(buttondata);
+		
+		$.ajax({
+			  type: "POST",
+			  url: "/RGB",
+			  data: buttondata,
+			  success: function(){},
+			  dataType: "json",
+			  contentType : "application/json"
+			});
+    })
+	
+	
+	 $('#blue-button').change(function() {
+	  
+		var buttonName = $(this).prop('name');
+		var buttonId = $(this).prop('id');
+        var buttonStatus = $(this).prop('checked');
+		
+		var blueButton = new Object();
+		blueButton.id =  buttonId;
+		blueButton.name = buttonName;
+		blueButton.status =  buttonStatus;
+
+		var buttondata = JSON.stringify(blueButton)
+		console.log(buttondata);
+		
+		$.ajax({
+			  type: "POST",
+			  url: "/RGB",
+			  data: buttondata,
+			  success: function(){},
+			  dataType: "json",
+			  contentType : "application/json"
+			});
+	  
+  })
+  
+</script>
+
+</body>
+</html>
