@@ -1,13 +1,8 @@
 # swishPi-pHAT
 Wireless sensor network Hub pHAT for Raspberry Pi 
 
-
-
-<<<<<<< HEAD
 ![**SwishPi pHAT plugin shield**](/Hardware/images/swish.jpg?raw=true "SwishPi pHAT")
-=======
-![**SwishPi pHAT plugin shield**](/swish.jpg?raw=true "SwishPi pHAT")
->>>>>>> 764a674edf02417f0ac099ae16444af01fd9296f
+
 
 
 
