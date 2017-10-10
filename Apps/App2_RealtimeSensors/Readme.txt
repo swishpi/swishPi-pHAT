@@ -23,6 +23,6 @@ Switch to app directory and issue: sudo npm start
 
 Change IP of app on App2_RealtimeSensors\public\js to match the IP of your hub.
 
-![**Temperature and humdity dashboard**](Dashboard.jpg?raw=true "SwishPi pHAT dashboard")
+![**Temperature and humdity dashboard**](/Apps/App2_RealtimeSensors/Dashboard.jpg?raw=true "SwishPi pHAT dashboard")
 
 
